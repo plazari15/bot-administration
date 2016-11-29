@@ -10,6 +10,6 @@ class PhrasesController extends Controller
     public function GetPhrase(){
         $phrase = Phrases::inRandomOrder()->first()->toJson();
 
-        return response()->json($phrase);
+        return response($phrase);
     }
 }
