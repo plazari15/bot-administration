@@ -9,5 +9,5 @@ class Phrases extends Model
 {
     use SoftDeletes;
 
-
+    $fillable = ['phrase', 'Autor'];
 }
