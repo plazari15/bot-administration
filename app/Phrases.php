@@ -10,4 +10,12 @@ class Phrases extends Model
     use SoftDeletes;
 
     protected $fillable = ['phrase', 'author'];
+
+    public function getAuthorAttribute($value){
+        if($value == ''){
+            $value = 'Autor desconhecido';
+        }
+
+        return $value;
+    }
 }
