@@ -12,8 +12,13 @@
 */
 
 Route::get('get', 'PhrasesController@GetPhrase');
-Route::get('send', 'PhrasesController@SendPhrases');
-Route::post('send', 'PhrasesController@StorePhrases');
+Route::get('send', 'PhrasesController@SendPhrases')->middleware('auth');
+Route::post('send', 'PhrasesController@StorePhrases')->middleware('auth');
+Route::get('aguardando', 'PhrasesController@ListWaitAprovation')->middleware('auth');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
 
 Auth::routes();
 
