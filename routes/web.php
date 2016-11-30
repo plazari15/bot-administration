@@ -10,8 +10,8 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-Route::get('', function (){
-   redirect('auth/login');
+Route::get('/', function (){
+   redirect('login');
 });
 Route::get('get', 'PhrasesController@GetPhrase');
 Route::get('send', 'PhrasesController@SendPhrases')->middleware('auth');
