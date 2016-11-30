@@ -14,3 +14,7 @@
 Route::get('get', 'PhrasesController@GetPhrase');
 Route::get('send', 'PhrasesController@SendPhrases');
 Route::post('send', 'PhrasesController@StorePhrases');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
