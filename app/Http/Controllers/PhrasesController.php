@@ -10,6 +10,12 @@ class PhrasesController extends Controller
     public function GetPhrase(){
         $phrase = Phrases::inRandomOrder()->where('status', '1')->first()->toJson();
 
+        return response()->jsonp($phrase);
+    }
+
+    public function GetAllPhrase(){
+        $phrase = Phrases::where('status', 0)->get();
+
         return response($phrase);
     }
 
@@ -31,5 +37,9 @@ class PhrasesController extends Controller
         $phrases = Phrases::where('status', 0)->get();
 
         return view('Phrases', compact('phrases'));
+    }
+
+    public function DeletePhrase($id){
+        Phrases::destroy($id);
     }
 }

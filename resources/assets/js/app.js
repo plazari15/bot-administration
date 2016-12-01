@@ -32,15 +32,30 @@ Vue.component(
 
 const app = new Vue({
     el: '#app',
-    data:[
-        id: []
-    ],
+    delimiters : ['[[', ']]'], //Versão 2.0 do VUE
+    data : {
+        phrases : []
+    },
     mounted(){
-        //Tipo um ready
+        Vue.http.get('/all').then((response) => {
+            this.phrases = response.data;
+        });
+
+
     },
     methods: {
         excluir: function (id) {
-            this.id.splice();
+            if(confirm('Você tem certeza que deseja excluir?')){
+                Vue.http.get(`delete/${id}`).then((response) => {
+                    this.frases();
+                });
+            }
+
+        },//Acabou o método excluir
+        frases: function () {
+            Vue.http.get('/all').then((response) => {
+                this.phrases = response.data;
+            });
         }
     }
 });

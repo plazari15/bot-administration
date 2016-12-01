@@ -14,6 +14,8 @@ Route::get('/', function (){
    redirect('login');
 });
 Route::get('get', 'PhrasesController@GetPhrase');
+Route::get('all', 'PhrasesController@GetAllPhrase');
+Route::get('delete/{id}', 'PhrasesController@DeletePhrase');
 Route::get('send', 'PhrasesController@SendPhrases')->middleware('auth');
 Route::post('send', 'PhrasesController@StorePhrases')->middleware('auth');
 Route::get('aguardando', 'PhrasesController@ListWaitAprovation')->middleware('auth');

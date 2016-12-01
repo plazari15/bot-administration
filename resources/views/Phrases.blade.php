@@ -16,14 +16,12 @@
                             <td>Ações</td>
                         </tr>
 
-                        @foreach($phrases as $phrase)
-                            <tr>
-                                <td>{{ $phrase->id }}</td>
-                                <td>{{ $phrase->author }}</td>
-                                <td>{{ $phrase->phrase }}</td>
-                                <td><span v-on:click="excluir({{$phrase->id}})">Excluir</span> | Aprovar</td>
+                            <tr v-for="phrase in phrases" v-on:excluir="phrases.splice(index, 1)">
+                                <td>[[ phrase.id ]]</td>
+                                <td>[[ phrase.author ]]</td>
+                                <td>[[ phrase.phrase ]]</td>
+                                <td><span v-on:click="excluir([[ phrase.id ]])">Excluir</span> | Aprovar</td>
                             </tr>
-                        @endforeach
                     </table>
                 </div>
 
