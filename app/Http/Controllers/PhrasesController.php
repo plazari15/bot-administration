@@ -14,7 +14,7 @@ class PhrasesController extends Controller
     }
 
     public function SendPhrases(){
-        return view('sendPhrase');
+        return view('Phrases');
     }
 
     public function StorePhrases(Request $request){
