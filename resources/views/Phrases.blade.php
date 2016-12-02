@@ -20,7 +20,7 @@
                                 <td>[[ phrase.id ]]</td>
                                 <td>[[ phrase.author ]]</td>
                                 <td>[[ phrase.phrase ]]</td>
-                                <td><span v-on:click="excluir([[ phrase.id ]])">Excluir</span> | Aprovar</td>
+                                <td><span v-on:click="excluir([[ phrase.id ]])" style="cursor: pointer;">Excluir</span> | Aprovar</td>
                             </tr>
                     </table>
                 </div>
