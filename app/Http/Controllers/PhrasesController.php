@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Events\NewPhraseEvent;
 use App\Events\NovaFraseVisualizada;
+use App\Http\Requests\SendPhrase;
 use App\Phrases;
 use App\User;
 use Illuminate\Http\Request;
@@ -38,7 +39,7 @@ class PhrasesController extends Controller
         return view('SendPhrase');
     }
 
-    public function StorePhrases(Request $request){
+    public function StorePhrases(SendPhrase $request){
         if(empty($request->author)){
             $request->author = 'Autor desconhecido';
         }
