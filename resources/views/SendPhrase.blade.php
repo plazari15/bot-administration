@@ -9,7 +9,7 @@
 
                 <div class="panel-body">
                     {!! Form::open(['url' => 'send']) !!}
-
+                        {{ Form::hidden('user_id', Auth::user()->id) }}
                         <div class="form-group">
                             {{Form::label('athor', 'Autor')}}
                             {{Form::text('author', null, ['class' => 'form-control'])}}

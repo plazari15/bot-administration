@@ -46,6 +46,16 @@ const app = new Vue({
             this.phrasesAproved = response.data;
         });
 
+        //Vai entrar em uma das salas
+        Echo.channel('nova-frase')
+            .listen('NewPhraseEvent', (e) => {
+                this.frases();
+                iziToast.show({
+                    title: 'Olá',
+                    message: 'Teste de uma mensagem '
+                })
+            })
+
     },
     methods: {
         excluir: function (id) {

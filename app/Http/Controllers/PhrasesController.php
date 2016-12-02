@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\NewPhraseEvent;
 use App\Phrases;
 use App\User;
 use Illuminate\Http\Request;
@@ -39,9 +40,9 @@ class PhrasesController extends Controller
             $request->author = 'Autor desconhecido';
         }
 
-        $user = User::find(Auth::user()->id);
-        $user->phrases()->create($request->all());
+       $phrase = Phrases::create($request->all());
 
+        broadcast(new NewPhraseEvent($phrase));
         return back();
     }
 
