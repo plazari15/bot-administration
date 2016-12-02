@@ -31,7 +31,7 @@ class SendPhrase extends FormRequest
     public function messages()
     {
         return [
-            'phrase' => 'Você precisa ao menos inserir uma frase'
+            'phrase.required' => 'Você precisa ao menos inserir uma frase'
         ];
     }
 }
