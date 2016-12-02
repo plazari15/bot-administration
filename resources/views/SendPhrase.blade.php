@@ -9,6 +9,7 @@
 
                 <div class="panel-body">
                     {!! Form::open(['url' => 'send']) !!}
+
                         <div class="form-group">
                             {{Form::label('athor', 'Autor')}}
                             {{Form::text('author', null, ['class' => 'form-control'])}}

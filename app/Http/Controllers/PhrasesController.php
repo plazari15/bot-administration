@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Phrases;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PhrasesController extends Controller
 {
@@ -28,7 +30,9 @@ class PhrasesController extends Controller
             $request->author = 'Autor desconhecido';
         }
 
-        Phrases::create($request->all());
+        //dd($request->all());
+        $user = User::find(Auth::user()->id);
+        $user->phrases()->create($request->all());
 
         return back();
     }

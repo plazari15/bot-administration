@@ -18,4 +18,8 @@ class Phrases extends Model
 
         return $value;
     }
+
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
 }

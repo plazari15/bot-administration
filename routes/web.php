@@ -18,7 +18,7 @@ Route::get('all', 'PhrasesController@GetAllPhrase');
 Route::get('delete/{id}', 'PhrasesController@DeletePhrase');
 Route::get('send', 'PhrasesController@SendPhrases')->middleware('auth');
 Route::post('send', 'PhrasesController@StorePhrases')->middleware('auth');
-Route::get('aguardando', 'PhrasesController@ListWaitAprovation')->middleware('auth');
+Route::get('frases', 'PhrasesController@ListWaitAprovation')->middleware('auth');
 
 Auth::routes();
 
