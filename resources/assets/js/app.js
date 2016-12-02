@@ -54,6 +54,7 @@ const app = new Vue({
             .listen('NovaFraseVisualizada', (e) => {
                 this.frases();
                 this.aprovadas();
+                console.log(e);
             })
 
     },
