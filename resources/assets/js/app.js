@@ -34,13 +34,17 @@ const app = new Vue({
     el: '#app',
     delimiters : ['[[', ']]'], //Versão 2.0 do VUE
     data : {
-        phrases : []
+        phrases : [],
+        phrasesAproved : []
     },
     mounted(){
         Vue.http.get('/all').then((response) => {
             this.phrases = response.data;
         });
 
+        Vue.http.get('/frases/aprovadas').then((response) => {
+            this.phrasesAproved = response.data;
+        });
 
     },
     methods: {
@@ -48,14 +52,35 @@ const app = new Vue({
             if(confirm('Você tem certeza que deseja excluir?')){
                 Vue.http.get(`delete/${id}`).then((response) => {
                     this.frases();
+                    this.aprovadas();
                 });
             }
-
         },//Acabou o método excluir
         frases: function () {
             Vue.http.get('/all').then((response) => {
                 this.phrases = response.data;
             });
+        }, //acabou o método frases
+        aprovadas: function () {
+            Vue.http.get('/frases/aprovadas').then((response) => {
+                this.phrasesAproved = response.data;
+            });
+        }, //Fim do método frases aprovadas
+        aprovar: function (id) {
+            if(confirm('Você tem certeza que deseja aprovar esta frase?')){
+                Vue.http.get(`aprove/${id}`).then((response) => {
+                    this.frases();
+                    this.aprovadas();
+                });
+            }
+        }, //fim do aprovar
+        disapprove: function (id) {
+            if(confirm('Deseja de fato reprovar esta frase')){
+                Vue.http.get(`/disapprove/${id}`).then((response) =>{
+                    this.frases();
+                    this.aprovadas();
+                });
+            }
         }
     }
 });

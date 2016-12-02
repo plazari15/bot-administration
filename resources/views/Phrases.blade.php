@@ -20,7 +20,7 @@
                                 <td>[[ phrase.id ]]</td>
                                 <td>[[ phrase.author ]]</td>
                                 <td>[[ phrase.phrase ]]</td>
-                                <td><span v-on:click="excluir([[ phrase.id ]])" style="cursor: pointer;">Excluir</span> | Aprovar</td>
+                                <td><span style="cursor: pointer" v-on:click="aprovar([[ phrase.id ]])">Aprovar</span> | <span v-on:click="excluir([[ phrase.id ]])" style="cursor: pointer;">Excluir</span></td>
                             </tr>
                     </table>
                 </div>
@@ -39,14 +39,16 @@
                             <td>ID</td>
                             <td>Autor</td>
                             <td>Frase</td>
+                            <td>visualizações</td>
                             <td>Ações</td>
                         </tr>
 
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>Reprovar</td>
+                        <tr v-for="phrase in phrasesAproved">
+                            <td>[[ phrase.id ]]</td>
+                            <td>[[ phrase.author ]]</td>
+                            <td>[[ phrase.phrase ]] </td>
+                            <td>[[ phrase.visualizado ]] </td>
+                            <td><span v-on:click="disapprove([[ phrase.id ]])" style="cursor: pointer;">Reprovar</span> | <span v-on:click="excluir([[ phrase.id ]])" style="cursor: pointer;">Excluir</span></td>
                         </tr>
                     </table>
                 </div>

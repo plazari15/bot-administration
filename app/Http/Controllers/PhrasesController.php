@@ -21,6 +21,12 @@ class PhrasesController extends Controller
         return response($phrase);
     }
 
+    public function GetAllPhraseApproved(){
+        $phrase = Phrases::where('status', 1)->get();
+
+        return response($phrase);
+    }
+
     public function SendPhrases(){
         return view('SendPhrase');
     }
@@ -30,7 +36,6 @@ class PhrasesController extends Controller
             $request->author = 'Autor desconhecido';
         }
 
-        //dd($request->all());
         $user = User::find(Auth::user()->id);
         $user->phrases()->create($request->all());
 
@@ -45,5 +50,21 @@ class PhrasesController extends Controller
 
     public function DeletePhrase($id){
         Phrases::destroy($id);
+    }
+
+    public function AprovePhrase($id){
+        $phrase = Phrases::find($id);
+
+        $phrase->status = 1;
+
+        $phrase->save();
+    }
+
+    public function DisapprovePhrase($id){
+        $phrase = Phrases::find($id);
+
+        $phrase->status = 0;
+
+        $phrase->save();
     }
 }
