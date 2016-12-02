@@ -24,16 +24,32 @@
                             </tr>
                     </table>
                 </div>
+            </div>
+        </div>
+    </div>
 
-                {{--<!-- let people make clients -->--}}
-                {{--<passport-clients></passport-clients>--}}
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Frases aprovadas</div>
 
-                {{--<!-- list of clients people have authorized to access our account -->--}}
-                {{--<passport-authorized-clients></passport-authorized-clients>--}}
+                <div class="panel-body">
+                    <table class="table">
+                        <tr>
+                            <td>ID</td>
+                            <td>Autor</td>
+                            <td>Frase</td>
+                            <td>Ações</td>
+                        </tr>
 
-                {{--<!-- make it simple to generate a token right in the UI to play with -->--}}
-                {{--<passport-personal-access-tokens></passport-personal-access-tokens>--}}
-
+                        <tr>
+                            <td>[[ phrase.id ]]</td>
+                            <td>[[ phrase.author ]]</td>
+                            <td>[[ phrase.phrase ]]</td>
+                            <td>Reprovar</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
