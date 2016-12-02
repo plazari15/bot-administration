@@ -13,12 +13,14 @@
                             <td>ID</td>
                             <td>Autor</td>
                             <td>Frase</td>
+                            <td>Visualizações</td>
                             <td>Ações</td>
                         </tr>
 
                             <tr v-for="phrase in phrases" v-on:excluir="phrases.splice(index, 1)">
                                 <td>[[ phrase.id ]]</td>
                                 <td>[[ phrase.author ]]</td>
+                                <td>[[ phrase.visualizado ]]</td>
                                 <td>[[ phrase.phrase ]]</td>
                                 <td><span style="cursor: pointer" v-on:click="aprovar([[ phrase.id ]])">Aprovar</span> | <span v-on:click="excluir([[ phrase.id ]])" style="cursor: pointer;">Excluir</span></td>
                             </tr>

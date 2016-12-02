@@ -10,9 +10,12 @@ use Illuminate\Support\Facades\Auth;
 class PhrasesController extends Controller
 {
     public function GetPhrase(){
-        $phrase = Phrases::inRandomOrder()->where('status', '1')->first()->toJson();
-
-        return response()->jsonp($phrase);
+        $phrase = Phrases::inRandomOrder()->where('status', '1')->first();
+        $count = Phrases::find($phrase->id);
+        $conta = $count->visualizado + 1;
+        $count-> visualizado = $conta;
+        $count->save();
+        return response()->json($phrase);
     }
 
     public function GetAllPhrase(){
