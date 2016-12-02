@@ -50,10 +50,6 @@ const app = new Vue({
         Echo.channel('nova-frase')
             .listen('NewPhraseEvent', (e) => {
                 this.frases();
-                iziToast.show({
-                    title: 'Olá',
-                    message: 'Teste de uma mensagem '
-                })
             })
 
     },
