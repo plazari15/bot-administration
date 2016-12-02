@@ -43,9 +43,9 @@
                         </tr>
 
                         <tr>
-                            <td>[[ phrase.id ]]</td>
-                            <td>[[ phrase.author ]]</td>
-                            <td>[[ phrase.phrase ]]</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             <td>Reprovar</td>
                         </tr>
                     </table>
