@@ -22,7 +22,7 @@
                                 <td>[[ phrase.author ]]</td>
                                 <td>[[ phrase.phrase ]]</td>
                                 <td>[[ phrase.visualizado ]]</td>
-                                <td><span style="cursor: pointer" v-on:click="aprovar([[ phrase.id ]])">Aprovar</span> | <span v-on:click="excluir([[ phrase.id ]])" style="cursor: pointer;">Excluir</span></td>
+                                <td><span style="cursor: pointer" v-on:click="aprovar([[ phrase.id ]])"><i class="fa fa-thumbs-up" aria-hidden="true"></i></span> | <span v-on:click="excluir([[ phrase.id ]])" style="cursor: pointer;"><i class="fa fa-trash" aria-hidden="true"></i></span></td>
                             </tr>
                     </table>
                 </div>
@@ -50,7 +50,7 @@
                             <td>[[ phrase.author ]]</td>
                             <td>[[ phrase.phrase ]] </td>
                             <td>[[ phrase.visualizado ]] </td>
-                            <td><span v-on:click="disapprove([[ phrase.id ]])" style="cursor: pointer;">Reprovar</span> | <span v-on:click="excluir([[ phrase.id ]])" style="cursor: pointer;">Excluir</span></td>
+                            <td><span v-on:click="disapprove([[ phrase.id ]])" style="cursor: pointer;"><i class="fa fa-thumbs-down" aria-hidden="true"></i></span> | <span v-on:click="excluir([[ phrase.id ]])" style="cursor: pointer;"><i class="fa fa-trash" aria-hidden="true"></i></span></td>
                         </tr>
                     </table>
                 </div>
