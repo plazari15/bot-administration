@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Events\NewPhraseEvent;
+use App\Events\NovaFraseVisualizada;
 use App\Phrases;
 use App\User;
 use Illuminate\Http\Request;
@@ -16,6 +17,8 @@ class PhrasesController extends Controller
         $conta = $count->visualizado + 1;
         $count-> visualizado = $conta;
         $count->save();
+
+        broadcast( new NovaFraseVisualizada());
         return response()->json($phrase);
     }
 

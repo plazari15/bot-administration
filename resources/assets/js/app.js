@@ -51,6 +51,9 @@ const app = new Vue({
             .listen('NewPhraseEvent', (e) => {
                 this.frases();
             })
+            .listen('NovaFraseVisualizada', (e) => {
+                this.aprovadas();
+            })
 
     },
     methods: {
