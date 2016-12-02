@@ -52,6 +52,7 @@ const app = new Vue({
                 this.frases();
             })
             .listen('NovaFraseVisualizada', (e) => {
+                this.frases();
                 this.aprovadas();
             })
 
