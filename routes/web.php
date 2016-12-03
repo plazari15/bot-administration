@@ -13,7 +13,6 @@
 Route::get('/', function (){
    redirect('login');
 });
-Route::get('get', 'PhrasesController@GetPhrase');
 Route::get('all', 'PhrasesController@GetAllPhrase');
 Route::get('frases/aprovadas', 'PhrasesController@GetAllPhraseApproved');
 Route::get('delete/{id}', 'PhrasesController@DeletePhrase');
