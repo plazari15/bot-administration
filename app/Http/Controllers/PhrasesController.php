@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\approvePhrases;
 use App\Events\NewPhraseEvent;
 use App\Events\NovaFraseVisualizada;
 use App\Http\Requests\SendPhrase;
@@ -40,9 +41,6 @@ class PhrasesController extends Controller
     }
 
     public function StorePhrases(SendPhrase $request){
-        if(empty($request->author)){
-            $request->author = 'Autor desconhecido';
-        }
 
        $phrase = Phrases::create($request->all());
 
@@ -65,6 +63,7 @@ class PhrasesController extends Controller
 
         $phrase->status = 1;
 
+        broadcast(new approvePhrases());
         $phrase->save();
     }
 
@@ -73,6 +72,7 @@ class PhrasesController extends Controller
 
         $phrase->status = 0;
 
+        broadcast(new approvePhrases());
         $phrase->save();
     }
 }
