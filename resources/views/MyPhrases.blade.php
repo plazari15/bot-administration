@@ -39,3 +39,8 @@
 
 </div>
 @endsection
+
+@section('scripts')
+    <script>
+        alert('Devido ao recente lançamento desta função ela ainda apresenta falhas devido ao cache do servidor');
+    </script>
