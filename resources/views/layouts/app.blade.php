@@ -46,7 +46,7 @@
                     <ul class="nav navbar-nav">
                         &nbsp;<li><a href="{{ url('send') }}">Enviar uma frase</a></li>
                         &nbsp;<li><a href="{{ url('frases') }}">Frases</a></li>
-                        &nbsp;<li><a href="{{ url('minhas-frases') }}"><span class="label label-success">NEW</span>Minhas Frases</a></li>
+                        &nbsp;<li><a href="{{ url('minhas-frases') }}">Minhas Frases<span class="label label-success">NEW</span></a></li>
                         &nbsp;<li><a href="#">Frases no Lixo<span class="label label-danger">Em breve</span></a></li>
                     </ul>
 
