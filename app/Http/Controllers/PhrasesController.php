@@ -25,13 +25,13 @@ class PhrasesController extends Controller
     }
 
     public function GetAllPhrase(){
-        $phrase = Phrases::where('status', 0)->get();
+        $phrase = Phrases::where('status', 0)->with(['user'])->get();
 
         return response($phrase);
     }
 
     public function GetAllPhraseApproved(){
-        $phrase = Phrases::where('status', 1)->get();
+        $phrase = Phrases::where('status', 1)->with(['user'])->get();
 
         return response($phrase);
     }
@@ -49,7 +49,7 @@ class PhrasesController extends Controller
     }
 
     public function ListWaitAprovation(){
-        $phrases = Phrases::where('status', 0)->get();
+        $phrases = Phrases::where('status', 0)->with(['user'])->get();
 
         return view('Phrases', compact('phrases'));
     }

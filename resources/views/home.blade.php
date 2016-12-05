@@ -8,7 +8,7 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                    Bem vindo ao sistema Administrador de Robôs!
                 </div>
             </div>
 
