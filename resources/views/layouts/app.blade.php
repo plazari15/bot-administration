@@ -46,6 +46,7 @@
                     <ul class="nav navbar-nav">
                         &nbsp;<li><a href="{{ url('send') }}">Enviar uma frase</a></li>
                         &nbsp;<li><a href="{{ url('frases') }}">Frases</a></li>
+                        &nbsp;<li><a href="{{ url('frases') }}">Minhas Frases<span class="label label-danger">Em breve</span></a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
