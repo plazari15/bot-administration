@@ -75,4 +75,15 @@ class PhrasesController extends Controller
         broadcast(new approvePhrases());
         $phrase->save();
     }
+
+    public function MyPhrases(){
+        $phrases = Phrases::where('user_id', Auth::user()->id)->with(['user'])->get();
+
+        return response($phrases);
+    }
+
+    public function MyPhrasesView()
+    {
+        return view('MyPhrases');
+    }
 }

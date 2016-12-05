@@ -21,6 +21,8 @@ Route::get('disapprove/{id}', 'PhrasesController@DisapprovePhrase');
 Route::get('send', 'PhrasesController@SendPhrases')->middleware('auth');
 Route::post('send', 'PhrasesController@StorePhrases')->middleware('auth');
 Route::get('frases', 'PhrasesController@ListWaitAprovation')->middleware('auth');
+Route::get('my', 'PhrasesController@MyPhrases')->middleware('auth');
+Route::get('minhas-frases', 'PhrasesController@MyPhrasesView')->middleware('auth');
 
 Auth::routes();
 
