@@ -14,7 +14,7 @@
 	"port": "6001",
 	"referrers": [
 		{
-			"host": "administration.pedrolazari.com",
+			"host": "https://administration.pedrolazari.com",
 			"apiKey": "hgm1i3h02rqsn1koqhpab8hqdpmfo4kgcfjcdfr1c68rsf1qr7h0dg4mgg1r"
 		}
 	],
