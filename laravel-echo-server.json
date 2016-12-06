@@ -1,0 +1,19 @@
+{
+	"appKey": "gbj6e5bamuh0pi5e8jbmojcp5ukgcujigntinbc0bkp4qe77nbobntmfmide",
+	"authHost": null,
+	"authEndpoint": "/broadcasting/auth",
+	"database": "redis",
+	"databaseConfig": {
+		"redis": {},
+		"sqlite": {
+			"databasePath": "/database/laravel-echo-server.sqlite"
+		}
+	},
+	"devMode": false,
+	"host": "administration.pedrolazari.com",
+	"port": "6001",
+	"referrers": [],
+	"socketio": {},
+	"sslCertPath": "",
+	"sslKeyPath": ""
+}

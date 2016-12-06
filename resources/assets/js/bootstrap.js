@@ -41,7 +41,7 @@ import Echo from "laravel-echo"
 
 window.Echo = new Echo({
     broadcaster: 'socket.io',
-    host: 'http://http://administration.app:6001'
+    host: 'http://administration.pedrolazari.com:6001'
 });
 
 // window.Echo = new Echo({
