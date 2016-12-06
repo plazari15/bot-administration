@@ -86,6 +86,7 @@
     </div>
 
     <!-- Scripts -->
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
     <script src="/js/app.js"></script>
 @yield('scripts')
 </body>
