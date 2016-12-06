@@ -86,4 +86,14 @@ class PhrasesController extends Controller
     {
         return view('MyPhrases');
     }
+
+    public function trashView(){
+        return view('TrashedPhrases');
+    }
+
+    public function GetAllPhraseTrashed(){
+        $phrases = Phrases::onlyTrashed()->with('user')->get();
+
+        return response($phrases);
+    }
 }

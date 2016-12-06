@@ -35,6 +35,11 @@ Vue.component(
     require('./components/administration/MyPhrases.vue')
 );
 
+Vue.component(
+    'table-trashed-phrases',
+    require('./components/administration/TrashedPhrases.vue')
+);
+
 const app = new Vue({
     el: '#app',
     delimiters : ['[[', ']]'], //Versão 2.0 do VUE
