@@ -30,13 +30,17 @@ Vue.component(
     require('./components/passport/PersonalAccessTokens.vue')
 );
 
+Vue.component(
+    'table-administration-my-phrases',
+    require('./components/administration/MyPhrases.vue')
+);
+
 const app = new Vue({
     el: '#app',
     delimiters : ['[[', ']]'], //Versão 2.0 do VUE
     data : {
         phrases : [],
-        phrasesAproved : [],
-        MyPhrases : []
+        phrasesAproved : []
     },
     mounted(){
         Vue.http.get('/all').then((response) => {
@@ -45,10 +49,6 @@ const app = new Vue({
 
         Vue.http.get('/frases/aprovadas').then((response) => {
             this.phrasesAproved = response.data;
-        });
-
-        Vue.http.get('/my').then((response) => {
-            this.MyPhrases = response.data;
         });
 
         //Vai entrar em uma das salas
