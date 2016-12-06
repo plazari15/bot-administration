@@ -1,6 +1,7 @@
 {
 	"appKey": "r0gi1n7r8jb5hggm81od0ecrom1drdj1qubckaqqe7udp2rsgt3lphds3d0a",
-	"authHost": null,
+	"authHost": "",
+	"protocol" : "https",
 	"authEndpoint": "/broadcasting/auth",
 	"database": "redis",
 	"databaseConfig": {
@@ -13,7 +14,7 @@
 		}
 	},
 	"devMode": false,
-	"host": "67.205.135.181",
+	"host": "administration.pedrolazari.com",
 	"port": "6001",
 	"referrers": [
 		{
@@ -22,6 +23,6 @@
 		}
 	],
 	"socketio": {},
-	"sslCertPath": "",
-	"sslKeyPath": ""
+	"sslCertPath": "/etc/nginx/ssl/administration.pedrolazari.com/146680/server.crt",
+	"sslKeyPath": "/etc/nginx/ssl/administration.pedrolazari.com/146680/server.crt"
 }
