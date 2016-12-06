@@ -13,7 +13,7 @@
 		}
 	},
 	"devMode": false,
-	"host": "67.205.135.181",
+	"host": "https://administration.pedrolazari.com",
 	"port": "6001",
 	"referrers": [
 		{
