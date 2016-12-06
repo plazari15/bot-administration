@@ -1,5 +1,5 @@
 {
-	"appKey": "gbj6e5bamuh0pi5e8jbmojcp5ukgcujigntinbc0bkp4qe77nbobntmfmide",
+	"appKey": "r0gi1n7r8jb5hggm81od0ecrom1drdj1qubckaqqe7udp2rsgt3lphds3d0a",
 	"authHost": null,
 	"authEndpoint": "/broadcasting/auth",
 	"database": "redis",
@@ -10,9 +10,14 @@
 		}
 	},
 	"devMode": false,
-	"host": "http://administration.pedrolazari.com",
+	"host": "67.205.135.181",
 	"port": "6001",
-	"referrers": [],
+	"referrers": [
+		{
+			"host": "administration.pedrolazari.com",
+			"apiKey": "hgm1i3h02rqsn1koqhpab8hqdpmfo4kgcfjcdfr1c68rsf1qr7h0dg4mgg1r"
+		}
+	],
 	"socketio": {},
 	"sslCertPath": "",
 	"sslKeyPath": ""
