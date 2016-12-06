@@ -10,7 +10,7 @@
 		}
 	},
 	"devMode": false,
-	"host": "administration.pedrolazari.com",
+	"host": "http://administration.pedrolazari.com",
 	"port": "6001",
 	"referrers": [],
 	"socketio": {},
