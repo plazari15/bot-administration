@@ -1,7 +1,7 @@
 {
 	"appKey": "r0gi1n7r8jb5hggm81od0ecrom1drdj1qubckaqqe7udp2rsgt3lphds3d0a",
 	"authHost": "",
-	"protocol" : "https",
+	"protocol" : "http",
 	"authEndpoint": "/broadcasting/auth",
 	"database": "redis",
 	"databaseConfig": {
@@ -23,6 +23,6 @@
 		}
 	],
 	"socketio": {},
-	"sslCertPath": "/etc/nginx/ssl/administration.pedrolazari.com/146680/server.crt",
-	"sslKeyPath": "/etc/nginx/ssl/administration.pedrolazari.com/146680/server.crt"
+	"sslCertPath": "",
+	"sslKeyPath": ""
 }
