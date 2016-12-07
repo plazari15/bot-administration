@@ -41,7 +41,7 @@ import Echo from "laravel-echo"
 
 window.Echo = new Echo({
     broadcaster: 'socket.io',
-    host: 'https://websocket.pedrolazari.com:6001'
+    host: 'https://socket.pedrolazari.com:6001'
 });
 
 // window.Echo = new Echo({
