@@ -43,6 +43,12 @@
             .listen('PermanentDelete', (e) => {
                 this.trashed();
             })
+            .listen('Restore', (e) => {
+                this.trashed();
+            })
+            .listen('Destroy', (e) => {
+                this.trashed();
+            })
         },
         methods:{
             trashed: function(){

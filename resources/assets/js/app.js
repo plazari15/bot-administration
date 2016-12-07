@@ -68,6 +68,14 @@ const app = new Vue({
                 this.aprovadas();
                 this.frases();
             })
+            .listen('Restore', (e) => {
+                this.aprovadas();
+                this.frases();
+            })
+            .listen('Destroy', (e) => {
+                this.aprovadas();
+                this.frases();
+            })
 
     },
     methods: {
