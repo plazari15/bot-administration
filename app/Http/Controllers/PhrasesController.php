@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Events\approvePhrases;
 use App\Events\NewPhraseEvent;
 use App\Events\NovaFraseVisualizada;
+use App\Events\PermanentDelete;
 use App\Http\Requests\SendPhrase;
 use App\Phrases;
 use App\User;
@@ -56,6 +57,22 @@ class PhrasesController extends Controller
 
     public function DeletePhrase($id){
         Phrases::destroy($id);
+
+
+    }
+
+    public function Restore($id){
+        $phrase = Phrases::onlyTrashed()->where('id', $id);
+
+        $phrase->restore();
+    }
+
+    public function PermaDelete($id){
+        $phrase = Phrases::onlyTrashed()->where('id', $id);
+
+        $phrase->forceDelete();
+
+        broadcast( new PermanentDelete() );
     }
 
     public function AprovePhrase($id){

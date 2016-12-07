@@ -17,6 +17,8 @@ Route::get('all', 'PhrasesController@GetAllPhrase');
 Route::get('frases/aprovadas', 'PhrasesController@GetAllPhraseApproved');
 Route::get('frases/trash', 'PhrasesController@GetAllPhraseTrashed');
 Route::get('delete/{id}', 'PhrasesController@DeletePhrase');
+Route::get('restore/{id}', 'PhrasesController@Restore');
+Route::get('permadelete/{id}', 'PhrasesController@PermaDelete');
 Route::get('aprove/{id}', 'PhrasesController@AprovePhrase');
 Route::get('disapprove/{id}', 'PhrasesController@DisapprovePhrase');
 Route::get('send', 'PhrasesController@SendPhrases')->middleware('auth');

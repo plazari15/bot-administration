@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -17,6 +18,11 @@ class Phrases extends Model
         }
 
         return $value;
+    }
+
+    public function getCreatedAtAttribute($value)
+    {
+        return Carbon::createFromFormat('Y-m-d H:i:s', $value)->format('d/m/Y H:i');
     }
 
     public function user(){
