@@ -23,7 +23,11 @@
 
                 <div class="panel-body">
                     Este é seu token, você deve usar ele sempre que quiser se comunicar com nossa api!
-                    <code>{{ Auth::user()->api_token }}</code>
+                    @if(!empty(Auth::user()->api_token))
+                        <code>{{ Auth::user()->api_token }}</code>
+                        @else
+                    <p>Seu token pode levar até 2 minutos para ser gerado!</p>
+                        @endif
                 </div>
             </div>
 
