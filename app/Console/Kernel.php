@@ -27,7 +27,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('api:token --new')->everyMinute()->emailOutputTo('plazari96@gmail.com');
+        $schedule->command('api:token --new')->everyMinute();
     }
 
     /**
