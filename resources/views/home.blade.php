@@ -22,12 +22,14 @@
                 <div class="panel-heading">Api Token</div>
 
                 <div class="panel-body">
-                    Este é seu token, você deve usar ele sempre que quiser se comunicar com nossa api!
+                    <b>Este é seu token:</b> 
                     @if(!empty(Auth::user()->api_token))
                         <code>{{ Auth::user()->api_token }}</code>
                         @else
-                    <p>Seu token pode levar até 2 minutos para ser gerado!</p>
+                    <p style="color: red;">Seu token pode levar até 2 minutos para ser gerado!</p>
                         @endif
+
+                    <p>você deve usar ele sempre que quiser se comunicar com nossa api</p>
                 </div>
             </div>
 
