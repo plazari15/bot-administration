@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Commands\apiTokenCommand;
 use App\Console\Commands\SendNotification;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -15,6 +16,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         SendNotification::class,
+        apiTokenCommand::class,
     ];
 
     /**
@@ -25,8 +27,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command('api:token --new')->everyMinute()->emailOutputTo('plazari96@gmail.com');
     }
 
     /**
