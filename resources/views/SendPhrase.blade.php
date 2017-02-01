@@ -25,6 +25,22 @@
                         </div>
 
                         <div class="form-group">
+                            {{Form::label('athor', 'Categoria')}}
+                            {{Form::select('category_id', ['1' => 'Treino básico', '2' => 'Treino Médio', '3' => 'Intensivo'],null, ['class' => 'form-control'])}}
+                        </div>
+
+                        <div class="form-group">
+                            {{Form::label('athor', 'Enviar Agora')}}
+                            {{Form::checkbox('sendNow', 1, false)}}
+                        </div>
+
+                        <div class="form-group">
+                            {{Form::label('athor', 'Patrocinado')}}
+                            {{Form::checkbox('sponsor', 1, false)}}
+                        </div>
+
+
+                        <div class="form-group">
                             {{Form::label('phrase', 'Frase')}}
                             {{Form::text('phrase', null, ['class' => 'form-control'])}}
                         </div>

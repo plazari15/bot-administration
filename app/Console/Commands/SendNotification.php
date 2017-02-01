@@ -39,7 +39,9 @@ class SendNotification extends Command
     {
         $client = new \GuzzleHttp\Client();
 
-        $res = $client->request('GET', 'https://trainer.pedrolazari.com/subscription.php');
+        $res = $client->request('GET', 'https://trainer.pedrolazari.com/subscription.php?category=1');
+        $res = $client->request('GET', 'https://trainer.pedrolazari.com/subscription.php?category=2');
+        $res = $client->request('GET', 'https://trainer.pedrolazari.com/subscription.php?category=3');
 
         if($res->getStatusCode() == '200'){
             $this->info('Mensagens enviadas com sucesso!');
