@@ -28,6 +28,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('api:token --new')->everyMinute();
+        $schedule->command('notification:send')->twiceDaily(9, '19');
     }
 
     /**
