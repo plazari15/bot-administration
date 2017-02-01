@@ -19,4 +19,6 @@ Route::get('/user', function (Request $request) {
 
 Route::get('get', 'PhrasesController@GetPhrase');
 
+Route::get('frase', 'Api\Phrases@GetPhrase')->middleware('auth:api');
+
 Route::get('justMy', 'PhrasesController@GetMyPhrases');
