@@ -11,7 +11,7 @@ class SendNotification extends Command
      *
      * @var string
      */
-    protected $signature = 'notification:send';
+    protected $signature = 'notification:send {--now : mensagens que devem ser enviadas com urgencia} {--sponsor : itens patrocinados}';
 
     /**
      * The console command description.
@@ -39,12 +39,18 @@ class SendNotification extends Command
     {
         $client = new \GuzzleHttp\Client();
 
+        if($this->option('now')){
+            $res = $client->request('GET', 'https://trainer.pedrolazari.com/subscription.php?sendNow=1');
+
+            return $this->info('Vai iniciar agora o disparo de mensagens com envio imediato!');
+        }
+
         $res = $client->request('GET', 'https://trainer.pedrolazari.com/subscription.php?category=1');
         $res = $client->request('GET', 'https://trainer.pedrolazari.com/subscription.php?category=2');
         $res = $client->request('GET', 'https://trainer.pedrolazari.com/subscription.php?category=3');
 
         if($res->getStatusCode() == '200'){
-            $this->info('Mensagens enviadas com sucesso!');
+           return $this->info('Mensagens enviadas com sucesso!');
         }
     }
 }
