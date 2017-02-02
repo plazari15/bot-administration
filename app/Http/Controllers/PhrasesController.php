@@ -27,17 +27,6 @@ class PhrasesController extends Controller
         return response()->json($phrase);
     }
 
-    public function GetMyPhrases(Request $request){
-        $phrase = Phrases::inRandomOrder()->where('status', '1')->where('user_id', $request->user()->id)->first();
-        $count = Phrases::find($phrase->id);
-        $conta = $count->visualizado + 1;
-        $count-> visualizado = $conta;
-        $count->save();
-
-        broadcast( new NovaFraseVisualizada());
-        return response()->json($phrase);
-    }
-
     public function GetAllPhrase(){
         $phrase = Phrases::where('status', 0)->with(['user'])->get();
 

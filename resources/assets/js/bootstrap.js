@@ -37,12 +37,12 @@ Vue.http.interceptors.push((request, next) => {
  * allows your team to easily build robust real-time web applications.
  */
 
-// import Echo from "laravel-echo"
-//
-// window.Echo = new Echo({
-//     broadcaster: 'socket.io',
-//     host: 'https://socket.pedrolazari.com:6001'
-// });
+import Echo from "laravel-echo"
+
+window.Echo = new Echo({
+    broadcaster: 'socket.io',
+    host: 'https://websocket.pedrolazari.com:6001'
+});
 
 // window.Echo = new Echo({
 //     broadcaster: 'pusher',
