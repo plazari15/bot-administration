@@ -10,7 +10,7 @@ class Phrases extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['phrase', 'author', 'user_id', 'visualizado', 'sendNow', 'sponsor', 'category_id'];
+    protected $fillable = ['phrase', 'author', 'user_id', 'visualizado'];
 
     public function getAuthorAttribute($value){
         if($value == ''){
